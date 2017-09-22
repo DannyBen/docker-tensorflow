@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bash: &default
+    build: .
+    image: dannyben/tensorflow
+    entrypoint: bash
+    volumes: 
+    - ./app:/app
+
+  python:
+    <<: *default
+    entrypoint: python
